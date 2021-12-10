@@ -13,7 +13,8 @@ class Anagrams
     elsif @word1.sort == @word2.sort
       "Congradulations, these are anagrams!"
     else
-      "Sadly, your entries are neither anagrams nor antigrams."
+      match_array = @word1 & @word2
+      "These words aren't anagrams but #{match_array.length} letters match: #{match_array.join(", ")}"
     end
   end
 end
