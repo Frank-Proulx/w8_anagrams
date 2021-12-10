@@ -9,10 +9,11 @@
 * Ruby
 * Rspec
 * Bundler
+* Gems
 
 ## Description
 
-This program will prompt the user to enter two strings, either words or phrases, it filters out spaces and non letter characters in order to check only the letters. If the word contains no vowels it informs the user that they need to enter a real word. If the letters match exactly from the two entries it returns a string indicating they've entered anagrams. If no letters match it returns a string indicating antigrams. If none of those conditions are true it returns a string informing that the entries are neither anagrams nor antigrams.
+This program will prompt the user to enter two strings, either words or phrases, it filters out spaces and non letter characters in order to check only the letters. If the word contains no vowels it informs the user that they need to enter a real word. If the letters match exactly from the two entries it returns a string indicating they've entered anagrams. If no letters match it returns a string indicating antigrams. If none of those conditions are true it returns a string informing how many and which letters matched.
 
 ## Setup/Installation Requirements
 

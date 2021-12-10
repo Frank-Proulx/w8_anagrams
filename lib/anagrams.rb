@@ -14,7 +14,13 @@ class Anagrams
       "Congradulations, these are anagrams!"
     else
       match_array = @word1 & @word2
-      "These words aren't anagrams but #{match_array.length} letters match: #{match_array.join(", ")}"
+      s_maybe = ""
+      es_maybe = "es"
+      if match_array.length > 1
+        s_maybe = "s"
+        es_maybe = ""
+      end
+      "These entries aren't anagrams but #{match_array.length} letter#{s_maybe} match#{es_maybe}: #{match_array.join(", ")}"
     end
   end
 end
