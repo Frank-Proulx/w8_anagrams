@@ -26,4 +26,10 @@ describe('Anagrams#checker') do
     words = Anagrams.new("The Morse Code", "Here come dots!")
     expect(words.checker).to(eq("Congradulations, these are anagrams!"))
   end
+
+  it('will return a phrase which indicates how many and which letters match for entries that are words but are neither anagrams nor antigrams') do
+    words = Anagrams.new("I am same", "I am different")
+    expect(words.checker).to(eq("These words aren't anagrams but 4 letters match: i, a, m, e"))
+  end
+  
 end
