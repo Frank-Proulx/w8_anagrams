@@ -5,7 +5,7 @@ class Anagrams
   end
 
   def checker
-    if @word1.split('').sort() == @word2.split('').sort()
+    if @word1.downcase.split('').sort == @word2.downcase.split('').sort
       "These words are anagrams."
     end
   end
