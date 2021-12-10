@@ -1,3 +1,5 @@
+require 'dictionary_lookup'
+
 class Anagrams
   def initialize(word1, word2)
     @word1 = word1.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
@@ -20,7 +22,12 @@ class Anagrams
         s_maybe = "s"
         es_maybe = ""
       end
-      "These entries aren't anagrams but #{match_array.length} letter#{s_maybe} match#{es_maybe}: #{match_array.join(", ")}"
+      "These entries aren't anagrams but #{match_array.length} letter#{s_maybe} match#{es_maybe}: #{match_array.join(", ")}."
     end
   end
+
+  def is_word?
+
+  end
+
 end

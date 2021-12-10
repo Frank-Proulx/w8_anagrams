@@ -7,9 +7,10 @@
 ## Technologies Used
 
 * Ruby
+* Gems
 * Rspec
 * Bundler
-* Gems
+* Dictionary_lookup
 
 ## Description
 
