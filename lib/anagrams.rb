@@ -11,7 +11,7 @@ class Anagrams
     elsif !@word1.split('').any? { |letter| @word2.split('').include?(letter) }
       "These words don't share any letters and as such are antigrams."
     elsif @word1.split('').sort == @word2.split('').sort
-      "These words are anagrams."
+      "Congradulations, these are anagrams!"
     end
   end
 end

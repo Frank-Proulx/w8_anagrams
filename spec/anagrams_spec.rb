@@ -4,12 +4,12 @@ require('anagrams')
 describe('Anagrams#checker') do
   it('will take two words as arguements and check if they are anagrams, returning a phrase if they are') do
     words = Anagrams.new("listen", "silent")
-    expect(words.checker).to(eq("These words are anagrams."))
+    expect(words.checker).to(eq("Congradulations, these are anagrams!"))
   end
 
   it('will account for case in determining whether words are anagrams') do
     words = Anagrams.new("Listen", "Silent")
-    expect(words.checker).to(eq("These words are anagrams."))
+    expect(words.checker).to(eq("Congradulations, these are anagrams!"))
   end
 
   it('will first check for vowels to screen out non-words, returning a phrase if none are found') do
@@ -22,4 +22,8 @@ describe('Anagrams#checker') do
     expect(words.checker).to(eq("These words don't share any letters and as such are antigrams."))
   end
 
+  it('will function for strings of words as well as single words and remove spaces and punctuation to do so') do
+    words = Anagrams.new("The Morse Code", "Here come dots!")
+    expect(words.checker).to(eq("Congradulations, these are anagrams!"))
+  end
 end
