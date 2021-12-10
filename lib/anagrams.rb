@@ -33,10 +33,12 @@ class Anagrams
     word_array1 = @input1.split(' ')
     word_array2 = @input2.split(' ')
     word_array1.map! do |word|
-      word.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}.join('')
+      word_cheat1 = word.split('')
+      word.downcase.split('').delete_if{|x| (x.match(/[^a-z]/)) && (word_cheat1.find_index(x) == (word.length - 1))}.join('')
     end
     word_array2.map! do |word|
-      word.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}.join('')
+      word_cheat2 = word.split('')
+      word.downcase.split('').delete_if{|x| (x.match(/[^a-z]/)) && (word_cheat2.find_index(x) == (word.length - 1))}.join('')
     end
     word_array1.each do |word|
       results = DictionaryLookup::Base.define(word)
