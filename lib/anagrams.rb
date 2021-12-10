@@ -12,6 +12,8 @@ class Anagrams
       "These words don't share any letters - they are antigrams!"
     elsif @word1.sort == @word2.sort
       "Congradulations, these are anagrams!"
+    else
+      "Sadly, your entries are neither anagrams nor antigrams."
     end
   end
 end

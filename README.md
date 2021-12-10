@@ -1,33 +1,32 @@
-# _{Application Name}_
+# Anagram/antigram checker
 
-#### By _**{List of contributors}**_
+#### By Frank Proulx
 
-#### _{Brief description of application}_
+#### This is a program that allows the user to enter two words or phrases and returns a string indicating the result.
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* Ruby
+* Rspec
+* Bundler
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This program will prompt the user to enter two strings, either words or phrases, it filters out spaces and non letter characters in order to check only the letters. If the word contains no vowels it informs the user that they need to enter a real word. If the letters match exactly from the two entries it returns a string indicating they've entered anagrams. If no letters match it returns a string indicating antigrams. If none of those conditions are true it returns a string informing that the entries are neither anagrams nor antigrams.
 
 ## Setup/Installation Requirements
 
 * Create and/or navigate to the directory you would like to contain this project on your computer.
 * Initialize a git repository by typing **git init** in the terminal.
-* Type **git clone https://github.com/Frank-Proulx/insert_name_here** to clone the repository to your local machine.
-* Open the file "index.html" in the newly created "portfolio-landing" folder using either the GUI in your finder window, or typing **cd insert_name_here** and pressing return to navigate into the project folder, and then typing **open index.html** in the terminal from within the **insert_name_here** folder.  
-
-## Link to [GitHub Pages](https://frank-proulx.github.io//)
+* Type **git clone https://github.com/Frank-Proulx/w8_anagrams** to clone the repository to your local machine.
+* Navigate into project directory by typing cd w8_anagrams  
+* Type bundler in the terminal to populate gems
+* Type rspec in the terminal to confirm passing of all tests
+* Type ruby ./anagrams_script.rb to run the program
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+No known bugs at this time
 
 ## License
 
