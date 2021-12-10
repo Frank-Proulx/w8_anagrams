@@ -19,7 +19,7 @@ describe('Anagrams#checker') do
 
   it('will check if the words share no letters at all and return a phrase if so') do
     words = Anagrams.new("tree", "fang")
-    expect(words.checker).to(eq("These words don't share any letters and as such are antigrams."))
+    expect(words.checker).to(eq("These words don't share any letters - they are antigrams!"))
   end
 
   it('will function for strings of words as well as single words and remove spaces and punctuation to do so') do

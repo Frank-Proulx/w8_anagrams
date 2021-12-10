@@ -5,12 +5,11 @@ class Anagrams
   end
 
   def checker
-    
     vowel_array = ['a', 'e', 'i', 'o', 'u', 'y']
     if (!@word1.any? { |letter| vowel_array.include?(letter) }) || (!@word2.any? { |letter| vowel_array.include?(letter) })
       "Sorry, but you must enter actual words."
     elsif !@word1.any? { |letter| @word2.include?(letter) }
-      "These words don't share any letters and as such are antigrams."
+      "These words don't share any letters - they are antigrams!"
     elsif @word1.sort == @word2.sort
       "Congradulations, these are anagrams!"
     end
