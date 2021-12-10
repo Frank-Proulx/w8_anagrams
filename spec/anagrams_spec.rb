@@ -11,4 +11,11 @@ describe('Anagrams#checker') do
     words = Anagrams.new("Listen", "Silent")
     expect(words.checker).to(eq("These words are anagrams."))
   end
+
+  it('will first check for vowels to screen out non-words, returning a phrase if none are found') do
+    words = Anagrams.new("lkjfd", "silent")
+    expect(words.checker).to(eq("Sorry, but you must enter actual words."))
+  end
+
+  
 end
