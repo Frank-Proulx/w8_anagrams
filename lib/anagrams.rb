@@ -8,6 +8,8 @@ class Anagrams
     vowel_array = ['a', 'e', 'i', 'o', 'u', 'y']
     if (!@word1.split('').any? { |letter| vowel_array.include?(letter) }) || (!@word2.split('').any? { |letter| vowel_array.include?(letter) })
       "Sorry, but you must enter actual words."
+    elsif !@word1.split('').any? { |letter| @word2.split('').include?(letter) }
+      "These words don't share any letters and as such are antigrams."
     elsif @word1.split('').sort == @word2.split('').sort
       "These words are anagrams."
     end
