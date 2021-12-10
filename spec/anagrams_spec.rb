@@ -12,10 +12,10 @@ describe('Anagrams#checker') do
     expect(words.checker).to(eq("Congradulations, these are anagrams!"))
   end
 
-  # it('will first check for vowels to screen out non-words, returning a phrase if none are found') do
-  #   words = Anagrams.new("lkjfd", "silent")
-  #   expect(words.checker).to(eq("Sorry, but you must enter actual words."))
-  # end
+  it('will use the is_word method to determine if all words in the string entered are words, and if not inform the user with a message that includes the words that are not actual words') do
+    words = Anagrams.new("lkjfd is the fjkl", "silent")
+    expect(words.checker).to(eq("Sorry, no match found for: lkjfd, fjkl."))
+  end
 
   it('will check if the words share no letters at all and return a phrase if so') do
     words = Anagrams.new("tree", "fang")
@@ -23,7 +23,7 @@ describe('Anagrams#checker') do
   end
 
   it('will function for strings of words as well as single words and remove spaces and punctuation to do so') do
-    words = Anagrams.new("The Morse Code", "Here come dots!")
+    words = Anagrams.new("A gentleman", "Elegant man!")
     expect(words.checker).to(eq("Congradulations, these are anagrams!"))
   end
 
@@ -35,7 +35,7 @@ end
 
 describe('Anagrams#is_word?') do
   it('will use the dictionary_lookup gem to check if the inputted word is actually a word') do
-    words = Anagrams.new("lkjfd", "silent")
+    words = Anagrams.new("lkjasf", "silent night")
     expect(words.is_word?).to(eq(false))
   end
 end

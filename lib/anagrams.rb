@@ -1,15 +1,17 @@
 require 'dictionary_lookup'
 
 class Anagrams
-  def initialize(word1, word2)
-    @word1 = word1.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
-    @word2 = word2.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
+  def initialize(input1, input2)
+    @input1 = input1
+    @input2 = input2
+    @word1 = @input1.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
+    @word2 = @input2.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
+    @bad_words = []
   end
 
   def checker
-    vowel_array = ['a', 'e', 'i', 'o', 'u', 'y']
-    if (!@word1.any? { |letter| vowel_array.include?(letter) }) || (!@word2.any? { |letter| vowel_array.include?(letter) })
-      "Sorry, but you must enter actual words."
+    if !(self.is_word?)
+      "Sorry, no match found for: #{@bad_words.join(', ')}."
     elsif !@word1.any? { |letter| @word2.include?(letter) }
       "These words don't share any letters - they are antigrams!"
     elsif @word1.sort == @word2.sort
@@ -27,7 +29,30 @@ class Anagrams
   end
 
   def is_word?
-
+    result = true
+    word_array1 = @input1.split(' ')
+    word_array2 = @input2.split(' ')
+    word_array1.map! do |word|
+      word.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}.join('')
+    end
+    word_array2.map! do |word|
+      word.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}.join('')
+    end
+    word_array1.each do |word|
+      results = DictionaryLookup::Base.define(word)
+      if !(results.count >= 1)
+        @bad_words.push(word)
+        result = false
+      end
+    end
+    word_array2.each do |word|
+      results = DictionaryLookup::Base.define(word)
+      if !(results.count >= 1)
+        @bad_words.push(word)
+        result = false
+      end
+    end
+    result
   end
 
 end
