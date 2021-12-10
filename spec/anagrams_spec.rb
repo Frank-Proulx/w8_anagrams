@@ -36,6 +36,6 @@ end
 describe('Anagrams#is_word?') do
   it('will use the dictionary_lookup gem to check if the inputted word is actually a word') do
     words = Anagrams.new("lkjfd", "silent")
-    expect(words.is_word?).to(eq("Sorry, but you must enter actual words."))
+    expect(words.is_word?).to(eq(false))
   end
 end
