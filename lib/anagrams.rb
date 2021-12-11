@@ -1,17 +1,21 @@
 require 'dictionary_lookup'
 
 class Anagrams
+  attr_reader(:use_dictionary)
+
   def initialize(input1, input2)
     @input1 = input1
     @input2 = input2
     @word1 = @input1.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
     @word2 = @input2.downcase.split('').delete_if{|x| x.match(/[^a-z]/)}
     @bad_words = []
+    @use_dictionary = true
   end
 
   def checker
-    if !(self.is_word?)
-      "Sorry, no match found for: #{@bad_words.join(', ')}."
+    if !(self.is_word?) && @use_dictionary
+      @use_dictionary = false
+      "Sorry, no dictionary match found for: #{@bad_words.join(', ')}. If you believe this is in error, and would like to see your results anyway, enter 'y' in the terminal now."
     elsif !@word1.any? { |letter| @word2.include?(letter) }
       "These words don't share any letters - they are antigrams!"
     elsif @word1.sort == @word2.sort

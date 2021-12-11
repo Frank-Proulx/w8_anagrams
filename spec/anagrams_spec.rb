@@ -14,7 +14,7 @@ describe('Anagrams#checker') do
 
   it('will use the is_word method to determine if all words in the string entered are words, and if not inform the user with a message that includes the words that are not actual words') do
     words = Anagrams.new("lkjfd is the fjkl", "silent")
-    expect(words.checker).to(eq("Sorry, no match found for: lkjfd, fjkl."))
+    expect(words.checker).to(eq("Sorry, no dictionary match found for: lkjfd, fjkl. If you believe this is in error, and would like to see your results anyway, enter 'y' in the terminal now."))
   end
 
   it('will check if the words share no letters at all and return a phrase if so') do
