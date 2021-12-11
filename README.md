@@ -2,7 +2,7 @@
 
 #### By Frank Proulx
 
-#### This is a program that allows the user to enter two words or phrases and returns a string indicating the result.
+#### This is a program that allows the user to check for anagrams and antigrams by entering two words or phrases, it then returns a string indicating the result.
 
 ## Technologies Used
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-This program will prompt the user to enter two strings, either words or phrases, it filters out spaces and non letter characters in order to check only the letters. If the word contains no vowels it informs the user that they need to enter a real word. If the letters match exactly from the two entries it returns a string indicating they've entered anagrams. If no letters match it returns a string indicating antigrams. If none of those conditions are true it returns a string informing how many and which letters matched.
+This program will prompt the user to enter two strings, either words or phrases, it filters out spaces and non letter characters in order to check only the letters. It uses the dictionary_lookup gem to check if the words are actual words. If the letters match exactly from the two entries it returns a string indicating they've entered anagrams. If no letters match it returns a string indicating antigrams. If none of those conditions are true it returns a string informing how many and which letters matched.
 
 ## Setup/Installation Requirements
 
@@ -28,7 +28,7 @@ This program will prompt the user to enter two strings, either words or phrases,
 
 ## Known Bugs
 
-No known bugs at this time
+Dictionary_lookup sometimes returns no result for pluralized words and proper nouns, in order to account for this I added an option to bypass the dictionary_lookup and see the results anyway.
 
 ## License
 

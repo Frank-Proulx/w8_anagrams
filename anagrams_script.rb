@@ -14,6 +14,9 @@ while string2.length < 1
   puts "Please enter a second word or phrase"
   string2 = gets.chomp
 end
+if string1 == string2
+  puts "These entries are identical, but let's go through the motions anyway..."
+end
 if (string1.split('').any?{|x| x.match(/\d/)}) || (string2.split('').any?{|x| x.match(/\d/)})
   puts "Your entry contains numbers, and words do not, so your typo has been graciously removed for you"
 end
