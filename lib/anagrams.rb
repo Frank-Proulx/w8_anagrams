@@ -15,7 +15,7 @@ class Anagrams
   def checker
     if !(self.is_word?) && @use_dictionary
       @use_dictionary = false
-      "Sorry, no dictionary match found for: #{@bad_words.join(', ')}. If you believe this is in error, and would like to see your results anyway, enter 'y' in the terminal now."
+      "Sorry, no dictionary match found for: #{@bad_words.uniq.join(', ')}. If you believe this is in error, and would like to see your results anyway, enter 'y' in the terminal now."
     elsif !@word1.any? { |letter| @word2.include?(letter) }
       "These words don't share any letters - they are antigrams!"
     elsif @word1.sort == @word2.sort

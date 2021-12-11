@@ -28,3 +28,4 @@ end
 if choice == 'y'
   puts checking.checker
 end
+puts "Thanks and have a great day!"
